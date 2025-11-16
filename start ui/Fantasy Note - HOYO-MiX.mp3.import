@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cu67jokkvlx82"
+path="res://.godot/imported/Fantasy Note - HOYO-MiX.mp3-dd278a20d95276127a59df109266d032.mp3str"
+
+[deps]
+
+source_file="res://start ui/Fantasy Note - HOYO-MiX.mp3"
+dest_files=["res://.godot/imported/Fantasy Note - HOYO-MiX.mp3-dd278a20d95276127a59df109266d032.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
