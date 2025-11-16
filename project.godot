@@ -1,0 +1,25 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Dialogue"
+run/main_scene="uid://c53gdx7pvyqe5"
+config/features=PackedStringArray("4.6", "Forward Plus")
+config/icon="res://icon.svg"
+
+[gui]
+
+theme/custom="uid://dqvwv8gyfxiw0"
+theme/custom_font="uid://cmdg750e4f0qr"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"

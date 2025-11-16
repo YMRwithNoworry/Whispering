@@ -1,0 +1,14 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dqvwv8gyfxiw0"]
+
+[ext_resource type="StyleBox" uid="uid://h3mub6pd2i1c" path="res://start ui/button.tres" id="1_3cqy4"]
+[ext_resource type="FontFile" uid="uid://cmdg750e4f0qr" path="res://font/SourceHanSansSC-Bold.otf" id="1_fn5o1"]
+
+[resource]
+default_font = ExtResource("1_fn5o1")
+Button/styles/focus = ExtResource("1_3cqy4")
+Button/styles/hover = ExtResource("1_3cqy4")
+Button/styles/normal = ExtResource("1_3cqy4")
+Button/styles/pressed = ExtResource("1_3cqy4")
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)

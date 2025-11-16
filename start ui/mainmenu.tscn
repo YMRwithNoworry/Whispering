@@ -1,0 +1,228 @@
+[gd_scene load_steps=15 format=3 uid="uid://c53gdx7pvyqe5"]
+
+[ext_resource type="Script" uid="uid://2wxre86warhc" path="res://start ui/mainmenu.gd" id="1_da6uj"]
+[ext_resource type="Theme" uid="uid://dqvwv8gyfxiw0" path="res://theme/alku.tres" id="2_rfu4t"]
+[ext_resource type="FontFile" uid="uid://bpmfc42eyxwie" path="res://font/PinRuShouXieTi-1.ttf" id="4_qbyvt"]
+[ext_resource type="FontFile" uid="uid://c5bj1t281kcn1" path="res://font/MomoSignature-Regular.ttf" id="4_v2f1q"]
+[ext_resource type="AudioStream" uid="uid://cu67jokkvlx82" path="res://start ui/Fantasy Note - HOYO-MiX.mp3" id="5_v2f1q"]
+[ext_resource type="FontFile" uid="uid://dky21tr3bgkpc" path="res://font/SourceHanSerifSC-Bold.otf" id="6_qbyvt"]
+[ext_resource type="Shader" uid="uid://c12ole1lxwboo" path="res://start ui/distraction.gdshader" id="7_cic6q"]
+
+[sub_resource type="Animation" id="Animation_da6uj"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TitleLabel:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TitleLabel:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GlitchOverlay:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rfu4t"]
+resource_name = "button_hover"
+
+[sub_resource type="Animation" id="Animation_v2f1q"]
+resource_name = " glitch_shake"
+length = 0.05
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GlitchOverlay:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.012098264, 0.02480144, 0.036899704, 0.0459734),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(2, 0), Vector2(-3, 0), Vector2(-2.517, -2), Vector2(0, -1.712)]
+}
+
+[sub_resource type="Animation" id="Animation_2u3qm"]
+resource_name = "title_breathe"
+length = 4.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TitleLabel:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.05, -0.33333334, 0, 0, 0, 1, -0.33333334, 0, 0, 0),
+"times": PackedFloat32Array(0, 2, 4)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TitleLabel:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.05, -0.33333334, 0, 0, 0, 1, -0.33333334, 0, 0, 0),
+"times": PackedFloat32Array(0, 2, 4)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v2f1q"]
+_data = {
+&"RESET": SubResource("Animation_da6uj"),
+&"button_hover": SubResource("Animation_rfu4t"),
+&"glitch_shake": SubResource("Animation_v2f1q"),
+&"title_breathe": SubResource("Animation_2u3qm")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v2f1q"]
+bg_color = Color(0, 0, 0, 1)
+expand_margin_left = 45.0
+expand_margin_right = 45.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wskcc"]
+shader = ExtResource("7_cic6q")
+shader_parameter/movement_speed = 0.02400000114
+shader_parameter/movement_scale = 0.9770000464075
+shader_parameter/color_1 = Color(1, 1, 1, 1)
+shader_parameter/color_2 = Color(1, 1, 1, 1)
+
+[node name="Mainmenu" type="Control" unique_id=1678705043]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_da6uj")
+
+[node name="Background" type="ColorRect" parent="." unique_id=787047675]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GlitchOverlay" type="ColorRect" parent="." unique_id=1459316526]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=108022288]
+libraries = {
+&"": SubResource("AnimationLibrary_v2f1q")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1242169347]
+stream = ExtResource("5_v2f1q")
+volume_db = -25.574
+autoplay = true
+
+[node name="Particles" type="GPUParticles2D" parent="." unique_id=934854978]
+
+[node name="TitleLabel" type="Label" parent="." unique_id=2096773729]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -249.0
+offset_top = -174.0
+offset_right = 251.0
+offset_bottom = -91.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_rfu4t")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_qbyvt")
+theme_override_font_sizes/font_size = 80
+text = "耳语"
+horizontal_alignment = 1
+
+[node name="SubtitleLabel" type="Label" parent="." unique_id=846524119]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.5
+offset_top = -90.5
+offset_right = 58.5
+offset_bottom = -73.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_rfu4t")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_v2f1q")
+theme_override_font_sizes/font_size = 11
+theme_override_styles/normal = SubResource("StyleBoxFlat_v2f1q")
+text = "---Whispering---"
+horizontal_alignment = 1
+
+[node name="StartButton" type="Button" parent="." unique_id=883718879]
+custom_minimum_size = Vector2(90, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -20.0
+offset_right = 45.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.7
+theme = ExtResource("2_rfu4t")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_qbyvt")
+text = "开始对话"
+icon_alignment = 1
+
+[node name="water" type="ColorRect" parent="." unique_id=1007322052]
+z_index = -1
+material = SubResource("ShaderMaterial_wskcc")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
